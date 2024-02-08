@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Box Methods</title>
+</head>
+<body>
+    <h1>Welcome to Jquery textbox methods tutorials</h1>
+    <input type="text"  id="txt1">
+    <input type="text"  id="txt2">
+    <input type="button" value="Add" id="Btn">
+
+    <script src="../Js/jquery-min.js"></script>
+    <script>
+            $(document).ready(function(){
+                $("#Btn").click(function(){
+                debugger
+                    var num1=$("#txt1").val();
+                    var num2=$("#txt2").val();
+                    if(num1=="" || num2==""){
+                        alert("Please fill all the fields");
+                    }else if(!parseInt(num1) || !parseInt(num2)){
+                        alert("Please Enter Integer values ");
+                    }
+                    else{
+                        var add=parseInt(num1) +parseInt(num2);
+                        alert("Addition="+add);
+                    }
+                });
+            });
+    </script>
+</body>
+</html>
