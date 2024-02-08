@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1">Events page here</h1>
+    <input type="button" value="Button Color" id="btnColorChange">
+<hr>
+    <h1 id="h2">Color change on Mouse Right click button</h1>
+    <input type="button" value="Button Right Click" id="btnRightEvent">
+<hr>
+    <h1 id="h3">Color change on Double click button</h1>
+    <input type="button" value="Button Double Click" id="btnDoubleClick">
+<hr>
+    <h1 id="h4">Color change on Mouse hover button</h1>
+    <input type="button" value="Button Mouse Hover(Enter) Click" id="btnMouseEnter">
+<hr>
+    <h1 id="h5">Color change on Mouse leave button</h1>
+    <input type="button" value="Button Mouse Leave Click" id="btnMouseLeave">
+<hr>
+    <h1 id="h6">Color change When left,right,middle button pressed</h1>
+    <input type="button" value="Button Mouse Pressed Click" id="btnMouseDown">
+<hr>
+    <h1 id="h7">Color change When left,right,middle button released</h1>
+    <input type="button" value="Button Mouse Released Click" id="btnMouseUp">
+<hr>
+    <h2>Focus and Blur:</h2><input type="text" id="txtFocus">
+<hr>
+<h1 id="h8">"On" event (Multiple Events)</h1>
+    <script src="../Js/jquery-min.js"></script>
+    <script>
+            $(document).ready(function(){
+            $("#btnColorChange").click(function(){
+                //Use to change the color of H1 when button click
+                $("#h1").css("color","red");
+            });
+            $("#btnRightEvent").contextmenu(function(){
+                //Use to change the color of H1 when Right button click
+                $("#h2").css("color","red");
+            });
+            $("#btnDoubleClick").dblclick(function(){
+                //Use to change the color of H1 when double button click
+                $("#h3").css("color","red");
+            });
+            $("#btnMouseEnter").mouseenter(function(){
+                //Use to change the color of H1 when hover the mouse on button 
+                $("#h4").css("color","red");
+            });
+            $("#btnMouseLeave").mouseleave(function(){
+                //Use to change the color of H1 when mouse cursor leave the button 
+                $("#h5").css("color","red");
+            });
+            $("#btnMouseDown").mousedown(function(){
+                //Use to change the color of H1 when button is pressed
+                $("#h6").css("color","red");
+            });
+            $("#btnMouseUp").mouseup(function(){
+                //Use to change the color of H1 when button is released
+                $("#h7").css("color","red");
+            });
+            $("#txtFocus").focus(function(){
+                //Use to change the color of H1 when we enter or focus on textfield 
+                $("#txtFocus").css("background-color","red");
+            });
+            $("#txtFocus").blur(function(){
+                //Use to change the color of H1 when we leave the textfield 
+                $("#txtFocus").css("background-color","blue");
+            });
+            $("#h8").on({
+                //Multiple Events
+                mouseenter:function(){
+                $("#h8").css("background-color","red");
+               },
+               mouseleave:function(){
+                $("#h8").css("background-color","yellow");
+               },
+               click:function(){
+                $("#h8").css("background-color","purple");
+               }
+            });
+        });
+    </script>
+</body>
+</html>
