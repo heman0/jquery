@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade Effects</title>
+    <style>
+        #div1{
+            height: 120px;
+            width: 250px;
+            border: 5px solid black;
+            background-color: bisque;
+            display: none;
+        }#div2{
+            height: 120px;
+            width: 250px;
+            border: 5px solid black;
+            background-color: rgb(141, 97, 44);
+           
+        }
+        #div3{
+            height: 130px;
+            width: 250px;
+            border: 5px solid black;
+            background-color: rgb(59, 37, 11);
+           
+        }
+        #div4{
+            height: 130px;
+            width: 250px;
+            border: 5px solid black;
+            background-color: rgb(236, 180, 110);
+           
+        }
+    </style>
+</head>
+<body>
+    <!-- -----Fade In effect section----------------------------- -->
+    <div id="div1">
+        <h1>Fade IN Effects</h1>
+        <p>This is test para.</p>
+    </div>
+    <br>
+    <input type="button" value="Fade IN" id="btnFadeIn">
+
+    <!-- -----Fade Out effect section----------------------------- -->
+    <hr>
+    <div id="div2">
+        <h1>Fade OUT Effects</h1>
+        <p>This is test para.</p>
+    </div>
+    <br>
+    <input type="button" value="Fade OUT" id="btnFadeOut">
+
+  <!-- -----Fade Toggle effect section----------------------------- -->
+    <hr>
+    <div id="div3">
+        <h1>Fade Toggle Effects</h1>
+        <p>This is test para.</p>
+    </div>
+    <br>
+    <input type="button" value="Fade Toggle" id="btnFadeToggle">
+     <!-- -----Fade To effect section----------------------------- -->
+     <hr>
+     <div id="div4">
+         <h1>Fade To Effects</h1>
+         <p>This is test para.</p>
+     </div>
+     <br>
+     <input type="button" value="Fade To" id="btnFadeTo">
+    <script src="../Js/jquery-min.js"></script>
+       <script>
+        $(document).ready(function(){
+            $("#btnFadeIn").click(function(){
+                // arguments (speed,callback)
+               // $("#div1").fadeIn("fast"); for fast
+                //$("#div1").fadeIn("slow"); for slow
+                //$("#div1").fadeIn(3000); show effects in 3 seconds
+                $("#div1").fadeIn(3000,function(){ // callback method
+                    alert('fade in effect'); 
+                }); 
+            });
+            $("#btnFadeOut").click(function(){
+                // arguments (speed,callback)
+               // $("#div2").fadeOut("fast"); for fast
+                //$("#div2").fadeOut("slow"); for slow
+                //$("#div2").fadeOut(3000); show effects in 3 seconds
+                $("#div2").fadeOut(3000,function(){ // callback method
+                    alert('fade out effect'); 
+                }); 
+            });
+            $("#btnFadeToggle").click(function(){
+                // arguments (speed,callback)
+               // $("#div3").fadeToggle("fast"); for fast
+                //$("#div3").fadeToggle("slow"); for slow
+                //$("#div3").fadeToggle(3000); show effects in 3 seconds
+                $("#div3").fadeToggle(3000,function(){ // callback method
+                    alert('fade toggle effect'); 
+                }); 
+            });
+            $("#btnFadeTo").click(function(){
+                // arguments (speed,opacity(0-1),callback)
+               // $("#div4").fadeTo("fast"); for fast
+                //$("#div4").fadeTo("slow"); for slow
+                //$("#div4").fadeTo(3000); show effects in 3 seconds
+                $("#div4").fadeTo(3000,0.2,function(){ // callback method
+                    alert('fade To effect')   
+                }); 
+            });
+        });
+    </script> 
+</body>
+</html>

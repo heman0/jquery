@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Content</title>
+</head>
+
+<body>
+    <!--------------- Get only text-------- -->
+    <p id="para1">This is my text only paragraph</p>
+    <input type="button" value="Get Only Text" id="btnGetText">
+    <hr>
+    <!--------------- Get HTML tags also -------- -->
+    <p id="para2">This is my <b>bold</b> paragraph</p>
+    <input type="button" value="Get HTML also" id="btnGetHTML">
+    <br>
+    <hr>
+    <!--------------- Get textfield,textbox data -------- -->
+    <input type="text" id="txtOne" placeholder="Enter Name">
+    <input type="button" value="Get textfield value " id="btnTextFieldValue">
+    <br>
+    <hr>
+    <!--------------- Get Radio button values -------- -->
+    <label for="">GENDER:</label>
+    <label for="">Male</label>
+    <input type="radio" name="gender" value="Male">
+    <label for="">Female</label>
+    <input type="radio" name="gender" value="Female">
+    <input type="button" value="Get Radio value " id="btnGetRadioValue">
+    <br>
+    <hr>
+    <!--------------- Get Dropdown values -------- -->
+    <select id="dropDownList">
+        <option value="-1">Select</option>
+        <option value="UP">UP</option>
+        <option value="UK">UK</option>
+        <option value="MP">MP</option>
+    </select>
+    <input type="button" value="Get dropdown value " id="btnGetDropDownValue">
+    <br>
+    <hr>
+    <!--------------- Get attributes of an element -------- -->
+    <a id="link1" href="#" title="Google" style="font-size: medium;">Click to link</a>
+
+    <!--------------- Jquery code starts here -------- -->
+    <script src="../Js/jquery-min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btnGetText").click(function () {
+                var v = $("#para1").text(); // Only used to get only text not HTML
+                alert(v);
+            });
+            $("#btnGetHTML").click(function () {
+                var v = $("#para2").html(); // Only used to get only text not HTML
+                alert(v);
+            });
+            $("#btnTextFieldValue").click(function () {
+                var v = $("#txtOne").val(); // get textfield,textbox values
+                alert(v);
+            });
+            $("#btnGetRadioValue").click(function () {
+                var v = $("input[name='gender']:checked").val(); // get Radio button values
+                alert(v);
+            });
+            $("#btnGetDropDownValue").click(function () {
+                var v = $("#dropDownList").val(); // get Dropdown values
+                if (v != "-1") {
+                    alert(v);
+                } else {
+                    alert("Please select a State");
+                }
+            });
+            $("#link1").click(function () {
+                var v = $("#link1").attr("style"); // get the attribute values of a element
+                alert(v);
+            });
+        });
+    </script>
+    <!--------------- Jquery code ends here -------- -->
+</body>
+
+</html>
